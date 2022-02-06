@@ -1,10 +1,11 @@
 import React from 'react';
 import './home.scss';
+import header from '../images/header.png'
 
 export const Home = () => {
   return (
-    <div>
-      <div className='left-top'></div>
+    <div className='home'>
+      <header style={{ backgroundImage: `url(${header})` }} />
     </div>
   );
 };
