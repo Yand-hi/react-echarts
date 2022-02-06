@@ -1,7 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import './home.scss';
 import headerBg from '../images/header.png';
-// @ts-ignore
 import * as echarts from 'echarts';
 
 const px = (n) => n / 2420 * (window as any).pageWidth;
