@@ -1,38 +1,49 @@
 @import "../shared/helper";
 
 .home {
-    header {
-        height: px(75);
-        background-size: cover;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  > header {
+    height: px(95);
+    background-size: cover;
+  }
+
+  > main {
+    margin: 0 auto;
+    width: px(1844);
+    height: px(954);
+    display: grid;
+    grid-template:
+      "box1 box2 box3" 456fr
+      "box4 box2 box5" 498fr / 516fr 798fr 530fr;
+
+    > .section1 {
+      grid-area: box1;
+      background: pink;
     }
+
+    > .section2 {
+      grid-area: box2;
+      background: lightblue;
+    }
+
+    > .section3 {
+      grid-area: box3;
+      background: grey;
+    }
+
+    > .section4 {
+      grid-area: box4;
+      background: lightgreen;
+    }
+
+    > .section5 {
+      grid-area: box5;
+      background: lightsalmon;
+    }
+  }
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// full => 1920*1080
-// left-top => 550*400
