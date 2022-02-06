@@ -18,6 +18,8 @@
     grid-template:
       "box1 box2 box3" 456fr
       "box4 box2 box5" 498fr / 516fr 798fr 530fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
 
     > .section1 {
       grid-area: box1;
