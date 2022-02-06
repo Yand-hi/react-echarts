@@ -4,6 +4,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  color: #ffffff;
 
   > header {
     height: px(95);
@@ -21,29 +22,57 @@
     grid-column-gap: 15px;
     grid-row-gap: 15px;
 
+    > section {
+      border: 1px solid #002866;
+      border-radius: 4px;
+      text-align: center;
+
+      h2 {
+        flex-shrink: 0;
+        font-size: px(22);
+        line-height: px(24);
+        padding: px(10) px(28);
+        text-shadow: 0 0 px(3) #ffffff;
+      }
+    }
+
     > .section1 {
       grid-area: box1;
-      background: pink;
     }
 
     > .section2 {
       grid-area: box2;
-      background: lightblue;
     }
 
     > .section3 {
       grid-area: box3;
-      background: grey;
     }
 
     > .section4 {
       grid-area: box4;
-      background: lightgreen;
     }
 
     > .section5 {
       grid-area: box5;
-      background: lightsalmon;
+    }
+
+    .ddos {
+      height: px(456);
+      display: flex;
+      flex-direction: column;
+
+      .chart {
+        flex: 1;
+        border: 1px solid red;
+      }
+    }
+
+    .ddos .web {
+      height: px(456);
+    }
+
+    .net .host {
+      height: px(498);
     }
   }
 }
