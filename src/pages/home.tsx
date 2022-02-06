@@ -4,7 +4,7 @@ import './home.scss';
 export const Home = () => {
   return (
     <div>
-      hello,world!
+      <div className='left-top'></div>
     </div>
   );
 };
