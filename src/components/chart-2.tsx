@@ -28,7 +28,7 @@ export const Chart2 = () => {
         {
           name: '2011年',
           type: 'bar',
-          data: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+          data: [3, 2, 7, 9, 4, 5, 6, 8, 1],
           itemStyle: {
             normal: {
               color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
@@ -44,7 +44,7 @@ export const Chart2 = () => {
         {
           name: '2012年',
           type: 'bar',
-          data: [2, 3, 4, 5, 6, 7, 8, 9, 10],
+          data: [8, 5, 3, 10, 6, 7, 4, 9, 2],
           itemStyle: {
             normal: {
               color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
