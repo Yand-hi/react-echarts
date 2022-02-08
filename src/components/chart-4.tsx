@@ -6,8 +6,9 @@ import {px} from '../shared/px';
 export const Chart4 = () => {
   const divRef = useRef(null);
   useEffect(() => {
-    var myChart = echarts.init(divRef.current);
+    const myChart = echarts.init(divRef.current);
     myChart.setOption(createEchartsOptions({
+      color: '#F7A110',
       xAxis: {
         type: 'category',
         boundaryGap: false,
@@ -41,10 +42,10 @@ export const Chart4 = () => {
         areaStyle: {
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
             offset: 0,
-            color: '#414a9f'
+            color: '#F7A110'
           }, {
             offset: 1,
-            color: '#1b1d52'
+            color: '#1B1D52'
           }]),
         }
       }]

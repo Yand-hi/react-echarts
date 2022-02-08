@@ -21,6 +21,9 @@ export const Chart3 = () => {
         y2: px(70),
         containLabel: true
       },
+      tooltip: {
+        show: true
+      },
       xAxis: {
         type: 'category',
         boundaryGap: false,
@@ -34,7 +37,7 @@ export const Chart3 = () => {
         splitLine: {lineStyle: {color: '#073E78'}},
         axisLabel: {
           formatter(val) {
-            return val * 100 + '%';
+            return val + '%';
           }
         }
       },
@@ -42,27 +45,27 @@ export const Chart3 = () => {
         {
           name: '抢劫',
           type: 'line',
-          data: [0.05, 0.04, 0.06, 0.03, 0.05, 0.04, 0.07, 0.09, 0.06].reverse()
+          data: [50, 40, 60, 30, 50, 40, 70, 90, 60].reverse()
         },
         {
           name: '醉驾',
           type: 'line',
-          data: [0.02, 0.04, 0.04, 0.06, 0.03, 0.04, 0.05, 0.06, 0.05].reverse()
+          data: [20, 40, 40, 60, 30, 40, 50, 60, 50].reverse()
         },
         {
           name: '盗窃',
           type: 'line',
-          data: [0.03, 0.04, 0.04, 0.03, 0.05, 0.06, 0.05, 0.08, 0.07].reverse()
+          data: [30, 40, 40, 30, 50, 60, 50, 80, 70].reverse()
         },
         {
           name: '诈骗',
           type: 'line',
-          data: [0.02, 0.01, 0.04, 0.03, 0.05, 0.04, 0.03, 0.05, 0.06].reverse()
+          data: [20, 10, 40, 30, 50, 40, 30, 50, 60].reverse()
         },
         {
           name: '故意伤人',
           type: 'line',
-          data: [0.05, 0.05, 0.04, 0.06, 0.05, 0.03, 0.04, 0.07, 0.06].reverse()
+          data: [50, 50, 40, 60, 50, 30, 40, 70, 60].reverse()
         }
       ].map(obj => ({
         ...obj,
@@ -75,7 +78,7 @@ export const Chart3 = () => {
 
   return (
     <div className="bordered 发案趋势">
-      <h2>发案趋势分析</h2>
+      <h2>案发趋势分析</h2>
       <div ref={divRef} className="chart"/>
     </div>
   );

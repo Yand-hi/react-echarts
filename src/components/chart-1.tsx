@@ -32,6 +32,18 @@ export const Chart1 = () => {
           lineStyle: {color: '#083B70'}
         },
       },
+      tooltip: {
+        show: true,
+        backgroundColor: '#0c0d2d',
+        borderColor: '#0764bc',
+        formatter: (data) => {
+          return data.name + '：' + data.value + ' 起';
+        },
+        textStyle: {
+          color: '#fff',
+          fontWeight: 'lighter'
+        }
+      },
       series: [{
         type: 'bar',
         data: [10, 20, 36, 41, 15, 26, 37, 18, 29]

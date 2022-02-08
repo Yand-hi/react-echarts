@@ -23,12 +23,12 @@ export const Chart6 = () => {
           ],
           label: {show: false, color: 'white'},
           itemStyle: {
-            areaColor: '#010D3D',
+            areaColor: '#282e6d',
             color: colors['甘肃省'],
             borderColor: '#01A7F7',
             emphasis: {
               label: {color: 'white'},
-              areaColor: '#5470C6',
+              areaColor: '#1461fa',
             },
           }
         },
@@ -39,12 +39,12 @@ export const Chart6 = () => {
             {name: '四川省', value: 100},
           ],
           itemStyle: {
-            areaColor: '#010D3D',
+            areaColor: '#282e6d',
             color: colors['四川省'],
             borderColor: 'yellow',
             emphasis: {
               label: {color: 'white'},
-              areaColor: '#5470C6',
+              areaColor: '#1461fa',
             },
           }
         },
@@ -55,12 +55,12 @@ export const Chart6 = () => {
             {name: '青海省', value: 100},
           ],
           itemStyle: {
-            areaColor: '#010D3D',
+            areaColor: '#282e6d',
             color: colors['青海省'],
             borderColor: '#01A7F7',
             emphasis: {
               label: {color: 'white'},
-              areaColor: '#5470C6',
+              areaColor: '#1461fa',
             },
           }
         },
