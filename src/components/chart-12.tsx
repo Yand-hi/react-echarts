@@ -5,7 +5,6 @@ import {px} from '../shared/px';
 
 export const Chart12 = () => {
   const divRef = useRef(null);
-  const colors = ['#F46064', '#F38E1C', '#1CDB7C', '#8D70F8', '#33A4FA'];
   const data = [
     {value: 0.06, name: '东岗路'},
     {value: 0.18, name: '段家滩'},
@@ -22,6 +21,19 @@ export const Chart12 = () => {
     myChart.setOption(createEchartsOptions({
       xAxis: {show: false},
       yAxis: {show: false},
+      tooltip: {
+        show: true,
+        backgroundColor: '#0c0d2d',
+        borderColor: '#0764bc',
+        formatter: (data) => {
+          const value = data.value * 100 + '%'
+          return data.name + '：' + value;
+        },
+        textStyle: {
+          color: '#fff',
+          fontWeight: 'lighter'
+        }
+      },
       grid: {x: 0, x2: 0, y: 0, y2: 0, containLabel: true},
       legend: {
         orient: 'vertical',
