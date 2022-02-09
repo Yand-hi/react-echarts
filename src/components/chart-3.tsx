@@ -22,7 +22,13 @@ export const Chart3 = () => {
         containLabel: true
       },
       tooltip: {
-        show: true
+        show: true,
+        backgroundColor: '#0c0d2d',
+        borderColor: '#0764bc',
+        textStyle: {
+          color: '#fff',
+          fontWeight: 'lighter'
+        }
       },
       xAxis: {
         type: 'category',
