@@ -1,17 +1,38 @@
-import React, {useEffect, useRef} from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
-import {createEchartsOptions} from '../shared/create-echarts-options';
+import { createEchartsOptions } from '../shared/create-echarts-options';
 
 export const Chart10 = () => {
   const divRef = useRef(null);
+  const myChart = useRef(null);
+  const data = [
+    { name: '入室抢劫', data: 40 },
+    { name: '当街偷盗', data: 22 },
+    { name: '团伙诈骗', data: 20 },
+    { name: '刑事案件', data: 18 },
+    { name: '民事案件', data: 32 },
+  ];
+
   useEffect(() => {
-    var myChart = echarts.init(divRef.current);
-    myChart.setOption(createEchartsOptions({
+    setInterval(() => {
+      const newData = [
+        { name: '入室抢劫', data: Math.floor(Math.random() * 100) },
+        { name: '当街偷盗', data: Math.floor(Math.random() * 100) },
+        { name: '团伙诈骗', data: Math.floor(Math.random() * 100) },
+        { name: '刑事案件', data: Math.floor(Math.random() * 100) },
+        { name: '民事案件', data: Math.floor(Math.random() * 100) },
+      ]
+      x(newData)
+    }, 1000)
+  }, []);
+
+  const x = (data) => {
+    myChart.current.setOption(createEchartsOptions({
       xAxis: {
-        data: ['入室抢劫', '当街偷盗', '团伙诈骗', '刑事案件', '民事案件'],
-        axisTick: {show: false},
+        data: data.map(i => i.name),
+        axisTick: { show: false },
         axisLine: {
-          lineStyle: {color: '#083B70'}
+          lineStyle: { color: '#083B70' }
         },
         axisLabel: {
           formatter(val) {
@@ -27,10 +48,10 @@ export const Chart10 = () => {
       },
 
       yAxis: {
-        splitLine: {show: false},
+        splitLine: { show: false },
         axisLine: {
           show: true,
-          lineStyle: {color: '#083B70'}
+          lineStyle: { color: '#083B70' }
         }
       },
       tooltip: {
@@ -47,7 +68,7 @@ export const Chart10 = () => {
       },
       series: [{
         type: 'bar',
-        data: [40, 22, 20, 18, 32],
+        data: data.map(i => i.data),
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
           offset: 0,
           color: '#0A97FB'
@@ -57,7 +78,12 @@ export const Chart10 = () => {
         }]),
       }]
     }));
-  }, []);
+  }
+
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    x(data)
+  }, [])
 
   return (
     <div ref={divRef} className="chart">

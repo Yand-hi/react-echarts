@@ -1,17 +1,44 @@
-import React, {useEffect, useRef} from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
-import {createEchartsOptions} from '../shared/create-echarts-options';
+import { createEchartsOptions } from '../shared/create-echarts-options';
 
 export const Chart1 = () => {
   const divRef = useRef(null);
+  const myChart = useRef(null);
+  const data = [
+    { name: '城关区', data: 10 },
+    { name: '七里河区', data: 26 },
+    { name: '西固区', data: 36 },
+    { name: '安宁区', data: 41 },
+    { name: '红谷区', data: 15 },
+    { name: '永登区', data: 26 },
+    { name: '皋兰区', data: 37 },
+    { name: '榆中区', data: 18 },
+    { name: '兰州新区', data: 29 },
+  ];
   useEffect(() => {
-    const myChart = echarts.init(divRef.current);
-    myChart.setOption(createEchartsOptions({
+    setInterval(() => {
+      const newData = [
+        { name: '城关区', data: Math.floor(Math.random() * 100) },
+        { name: '七里河区', data: Math.floor(Math.random() * 100) },
+        { name: '西固区', data: Math.floor(Math.random() * 100) },
+        { name: '安宁区', data: Math.floor(Math.random() * 100) },
+        { name: '红谷区', data: Math.floor(Math.random() * 100) },
+        { name: '永登区', data: Math.floor(Math.random() * 100) },
+        { name: '皋兰区', data: Math.floor(Math.random() * 100) },
+        { name: '榆中区', data: Math.floor(Math.random() * 100) },
+        { name: '兰州新区', data: Math.floor(Math.random() * 100) },
+      ]
+      x(newData)
+    }, 1000)
+  }, []);
+  const x = (data) => {
+    myChart.current.setOption(createEchartsOptions({
       xAxis: {
-        data: ['城关区', '七里河区', '西固区', '安宁区', '红谷区', '永登区', '皋兰区', '渝中区', '兰州新区'],
-        axisTick: {show: false},
+        data: data.map(i => i.name),
+        axisTick: { show: false },
         axisLine: {
-          lineStyle: {color: '#083B70'}
+          lineStyle: { color: '#083B70' }
         },
         axisLabel: {
           formatter(val) {
@@ -26,10 +53,10 @@ export const Chart1 = () => {
         },
       },
       yAxis: {
-        splitLine: {show: false},
+        splitLine: { show: false },
         axisLine: {
           show: true,
-          lineStyle: {color: '#083B70'}
+          lineStyle: { color: '#083B70' }
         },
       },
       tooltip: {
@@ -46,9 +73,14 @@ export const Chart1 = () => {
       },
       series: [{
         type: 'bar',
-        data: [10, 20, 36, 41, 15, 26, 37, 18, 29]
+        data: data.map(i => i.data)
       }]
     }));
+  }
+
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    x(data);
   }, []);
 
   return (
