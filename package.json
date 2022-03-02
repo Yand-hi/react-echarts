@@ -1,6 +1,7 @@
 {
   "name": "react-echarts",
   "version": "0.0.0",
+  "homepage": "https://yand-hi.github.io/echarts-website/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
